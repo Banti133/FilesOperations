@@ -4,8 +4,37 @@ using FilesOperations;
 
 Console.WriteLine("Hello, World!");
 
-string filepath = "ProductS.txt";
-ProductclassDemo(filepath);
+ProdLinqOperationsExample();
+static void ProdLinqOperationsExample()
+{
+    ProdLinq prodLinq = new ProdLinq();
+    prodLinq.basiclinq();
+    prodLinq.wherelinq();
+    prodLinq.orderbylinq();
+    prodLinq.groupbylinq();
+    prodLinq.orderbythenbylinq();
+    prodLinq.takeLinq();
+    prodLinq.firstorfirstdefault();
+    prodLinq.singleorsingledefault();
+}
+
+//LinqOperations();
+static void LinqOperations()
+{
+    LinqDemo linqDemo = new LinqDemo();
+    linqDemo.TakeLinq();
+    linqDemo.linqtypearraylist();
+    linqDemo.basiclinq();
+    linqDemo.UsingwhereLinq();
+    linqDemo.UsingOrderByLinq();
+    linqDemo.GroupByLinq();
+    linqDemo.OrderByThenByLinq();
+    linqDemo.LinqFirstorFirstDefault();
+    linqDemo.SingleorSingleDefault();
+}
+
+//string filepath = "ProductS.txt";
+//ProductclassDemo(filepath);
 static void ProductclassDemo(string filepath)
 {
     ProductClass product = new ProductClass();

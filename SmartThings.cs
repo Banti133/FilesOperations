@@ -8,9 +8,17 @@ namespace FilesOperations
     //file reader, creating a new file
     public class SmartThings
     {
+        public string? Name { get; set; }
+        public string? Type { get; set; }
+
+        public SmartThings(string name, string type)
+        {
+            Name = name;
+            Type = type;
+        }
         public SmartThings() { }
 
-        public SmartThings(string name, string type) { }
+        
 
         public static void AddSmartThing(string filePath)
         {
