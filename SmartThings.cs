@@ -2,6 +2,8 @@
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
+using System.Text.Json;
 
 namespace FilesOperations
 {
@@ -18,8 +20,14 @@ namespace FilesOperations
         }
         public SmartThings() { }
 
-        
-
+        //serialization and deserialization methods
+        public void JsonSerializeMethod(SmartThings smart)
+        {
+            string jsonString = JsonSerializer.Serialize(smart);
+            Console.WriteLine("Serialized JSON: " + jsonString);
+            SmartThings smrt= JsonSerializer.Deserialize<SmartThings>(jsonString);
+            Console.WriteLine($"Name: {smrt.Name}, Type: {smrt.Type}");
+        }
         public static void AddSmartThing(string filePath)
         {
             try

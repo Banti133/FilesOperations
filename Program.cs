@@ -4,7 +4,40 @@ using FilesOperations;
 
 Console.WriteLine("Hello, World!");
 
-ProdLinqOperationsExample();
+//serialization and deserialization example
+//SerializationExample();
+static void SerializationExample()
+{
+    SmartThings smart = new SmartThings("Smart Light", "Lighting");
+    smart.JsonSerializeMethod(smart);
+}
+
+//SynchronousGetnumbers();
+static void SynchronousGetnumbers()
+{
+    Console.WriteLine($"Start: {DateTime.Now.ToLongTimeString()}");
+    var numbers = AsynchronousFile.GetNumbers(1, 10);
+    foreach (var number in numbers)
+    {
+        Console.WriteLine($"Number: {number}");
+    }
+    Console.WriteLine($"End: {DateTime.Now.ToLongTimeString()}");
+}
+
+AsyncGetNumbers();
+static async void AsyncGetNumbers()
+{
+    Console.WriteLine($"Start: {DateTime.Now.ToLongTimeString()}");
+    var numbersAsync = AsynchronousFile.GetNumbersAsync(1, 11);
+    await foreach (var number in numbersAsync)
+    {
+        Console.WriteLine(number);
+    }
+    Console.WriteLine($"End: {DateTime.Now.ToLongTimeString()}");
+}
+
+
+//ProdLinqOperationsExample();
 static void ProdLinqOperationsExample()
 {
     ProdLinq prodLinq = new ProdLinq();
